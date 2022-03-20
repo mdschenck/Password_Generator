@@ -93,6 +93,7 @@ function generatePassword() {
         possibleSpecials[Math.floor(Math.random() * passwordLength)];
     }
     console.log(generatedPassword);
+
     return;
     // function checkPasswordLength(generatedPassword, passwordLength) {
     // if (generatedPassword.length === passwordLength) {
