@@ -60,70 +60,76 @@ var possibleUppercase = [
 var possibleNumeric = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 var possibleSpecials = ["!", "@", "#", "$", "%", "^", "&", "*"];
 
-let passwordLength = 8; //prompt("Password Length?"); // Minimum 8 - max 128
-let lowercase = confirm("Do You Want To Include Lowercase?");
-let uppercase = confirm("Do You Want To Include Uppercase Characters?");
-let numbers = confirm("Do You Want To Include Numbers?");
-let special = confirm("Do You Want To Include Special Characters?");
-
-let generatedPassword;
+let generatedPassword = "";
 
 //if (parseInt(passwordLength))
 // Run password generation, at each step check if generatedPassword === passwordLength to return finished password
 
 function generatePassword() {
+  let passwordLength = prompt(
+    "Password Length: How Many Characters Would You Like?"
+  );
+  // if (passwordLength < 7 && passwordLength > 129) {
+  //   passwordLength = prompt(
+  //     "Password must be between 8 and 128 characters. Please try again!"
+  //   );
+  // }
+  let lowercase = confirm("Do You Want To Include Lowercase?");
+  let uppercase = confirm("Do You Want To Include Uppercase Characters?");
+  let numbers = confirm("Do You Want To Include Numbers?");
+  let special = confirm("Do You Want To Include Special Characters?");
   for (i = 0; i < 512; i++) {
     if (lowercase) {
       generatedPassword +=
         possibleLowercase[Math.floor(Math.random() * passwordLength)];
+      // if (generatedPassword.length === passwordLength) {
+      //   return generatedPassword;
+      // }
     }
 
     if (uppercase) {
       generatedPassword +=
         possibleUppercase[Math.floor(Math.random() * passwordLength)];
+      // if (generatedPassword.length === passwordLength) {
+      //   return generatedPassword;
+      // }
     }
 
     if (numbers) {
       generatedPassword +=
         possibleNumeric[Math.floor(Math.random() * passwordLength)];
+      // if (generatedPassword.length === passwordLength) {
+      //   return generatedPassword;
+      // }
     }
 
     if (special) {
       generatedPassword +=
         possibleSpecials[Math.floor(Math.random() * passwordLength)];
+      // if (generatedPassword.length === passwordLength) {
+      //   return generatedPassword;
+      // }
     }
     console.log(generatedPassword);
-
-    return;
-    // function checkPasswordLength(generatedPassword, passwordLength) {
-    // if (generatedPassword.length === passwordLength) {
-    //   return generatedPassword;
-    //}
   }
+  return generatedPassword.slice(0, passwordLength);
+  // function checkPasswordLength(generatedPassword, passwordLength) {
+  // if (generatedPassword.length === passwordLength) {
+  //   return generatedPassword;
+  //}
 }
 
 console.log(generatedPassword);
 
-if (parseInt(passwordLength))
-  // Write password to the #password input
-  function writePassword() {
-    var password = generatePassword();
-    var passwordText = document.querySelector("#password");
+//if (parseInt(passwordLength))
 
-    passwordText.value = password;
-  }
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+}
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-// WRITE PASSWORD TO PAGE ELEMENT -- is this even needed??
-var pwWrite = document.createElement("h2");
-pwWrite.textContent = `${generatedPassword}`;
-//pwWrite.textContent = `${password}`;
-
-//  change 3rd children to [1] below to get PW in text box -- not showing up due to???
-document.body.children[0].children[1].children[0].children[0].appendChild(
-  pwWrite
-);
-
-console.log(generatedPassword);
