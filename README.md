@@ -6,7 +6,7 @@ For this project, I was tasked with creating a secure password generator that wi
 
 ## Link to deployed application:
 
-https://mdschenck.github.io/Password-Generator/
+https://mdschenck.github.io/Password_Generator/
 
 ## User Story for this project:
 
