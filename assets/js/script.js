@@ -68,41 +68,46 @@ function generatePassword() {
   let passwordLength = prompt(
     "Password Length: How Many Characters Would You Like?"
   );
-  // if (passwordLength < 7 && passwordLength > 129) {
-  //   passwordLength = prompt(
-  //     "Password must be between 8 and 128 characters. Please try again!"
-  //   );
-  // }
   let lowercase = confirm("Do You Want To Include Lowercase?");
   let uppercase = confirm("Do You Want To Include Uppercase Characters?");
   let numbers = confirm("Do You Want To Include Numbers?");
   let special = confirm("Do You Want To Include Special Characters?");
 
-  for (i = 0; i < 512; i++) {
-    if (lowercase) {
-      generatedPassword +=
-        possibleLowercase[Math.floor(Math.random() * passwordLength)];
-    }
+  if (passwordLength > 7 && passwordLength < 129) {
+    if (lowercase || uppercase || numbers || special) {
+      for (i = 0; i < 512; i++) {
+        if (lowercase) {
+          generatedPassword +=
+            possibleLowercase[Math.floor(Math.random() * passwordLength)];
+        }
 
-    if (uppercase) {
-      generatedPassword +=
-        possibleUppercase[Math.floor(Math.random() * passwordLength)];
-    }
+        if (uppercase) {
+          generatedPassword +=
+            possibleUppercase[Math.floor(Math.random() * passwordLength)];
+        }
 
-    if (numbers) {
-      generatedPassword +=
-        possibleNumeric[Math.floor(Math.random() * passwordLength)];
-    }
+        if (numbers) {
+          generatedPassword +=
+            possibleNumeric[Math.floor(Math.random() * passwordLength)];
+        }
 
-    if (special) {
-      generatedPassword +=
-        possibleSpecials[Math.floor(Math.random() * passwordLength)];
+        if (special) {
+          generatedPassword +=
+            possibleSpecials[Math.floor(Math.random() * passwordLength)];
+        }
+        console.log(generatedPassword);
+      }
+
+      //Slice truncates the generated password from all possible random selections to the desired output.
+      return generatedPassword.slice(0, passwordLength);
+    } else {
+      alert("Must select at least one type of character. Please try again!");
     }
-    console.log(generatedPassword);
+  } else {
+    alert(
+      "Password length must be between 8 and 128 characters. Please try again!"
+    );
   }
-
-  //Slice truncates the generated password from all possible random selections to the desired output.
-  return generatedPassword.slice(0, passwordLength);
 }
 
 console.log(generatedPassword);
