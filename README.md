@@ -25,7 +25,7 @@ https://mdschenck.github.io/Password-Generator/
 - WHEN asked for character types to include in the password
   THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters.
 - WHEN I answer each prompt
-  THEN my input should be validated and at least one character type should be selected/
+  THEN my input should be validated and at least one character type should be selected.
 - WHEN all prompts are answered,
   THEN a password is generated that matches the selected criteria.
 - WHEN the password is generated
@@ -33,7 +33,7 @@ https://mdschenck.github.io/Password-Generator/
 
 ## Application Use:
 
-When the user navigates to the deployed page, they are presented with a blank password generator application. When clicked, the user is presented with a series of pop-ups to determine the password criteria of: Password Length and type of characters to be included, with the choice to include lowercase and uppercase alphabetic characters, as well as numeric characters and special characters.
+When the user navigates to the deployed page, they are presented with a blank password generator application. When clicked, the user is presented with a series of pop-ups to determine the password criteria of password length and type of characters to be included, with the choice to include lowercase and uppercase alphabetic characters, as well as numeric characters and special characters.
 
 ![Screenshot showing deployed website input](assets/images/screenshot-input.JPG)
 
@@ -47,7 +47,7 @@ If the user selects a password length of below the minimum 8 characters or above
 
 If the user does not select at least one type of character to include in their password, thew will be prompted to try again and include at least one character type.
 
-![Screenshot showing deployed website input](assets/images/screenshot-inputcharactertypevalidation.JPG)
+![Screenshot showing deployed website input](assets/images/screenshot-charactertypevalidation.JPG)
 
 ## Future Improvements:
 
