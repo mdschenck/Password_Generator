@@ -62,8 +62,7 @@ var possibleSpecials = ["!", "@", "#", "$", "%", "^", "&", "*"];
 
 let generatedPassword = "";
 
-//if (parseInt(passwordLength))
-// Run password generation, at each step check if generatedPassword === passwordLength to return finished password
+// The generatePassword function generates password based on user input. Runs through all possible permutations of uppercase & lowercase numbers, and then truncates the generated password to the desired password length.
 
 function generatePassword() {
   let passwordLength = prompt(
@@ -78,45 +77,32 @@ function generatePassword() {
   let uppercase = confirm("Do You Want To Include Uppercase Characters?");
   let numbers = confirm("Do You Want To Include Numbers?");
   let special = confirm("Do You Want To Include Special Characters?");
+
   for (i = 0; i < 512; i++) {
     if (lowercase) {
       generatedPassword +=
         possibleLowercase[Math.floor(Math.random() * passwordLength)];
-      // if (generatedPassword.length === passwordLength) {
-      //   return generatedPassword;
-      // }
     }
 
     if (uppercase) {
       generatedPassword +=
         possibleUppercase[Math.floor(Math.random() * passwordLength)];
-      // if (generatedPassword.length === passwordLength) {
-      //   return generatedPassword;
-      // }
     }
 
     if (numbers) {
       generatedPassword +=
         possibleNumeric[Math.floor(Math.random() * passwordLength)];
-      // if (generatedPassword.length === passwordLength) {
-      //   return generatedPassword;
-      // }
     }
 
     if (special) {
       generatedPassword +=
         possibleSpecials[Math.floor(Math.random() * passwordLength)];
-      // if (generatedPassword.length === passwordLength) {
-      //   return generatedPassword;
-      // }
     }
     console.log(generatedPassword);
   }
+
+  //Slice truncates the generated password from all possible random selections to the desired output.
   return generatedPassword.slice(0, passwordLength);
-  // function checkPasswordLength(generatedPassword, passwordLength) {
-  // if (generatedPassword.length === passwordLength) {
-  //   return generatedPassword;
-  //}
 }
 
 console.log(generatedPassword);
@@ -131,5 +117,5 @@ function writePassword() {
   passwordText.value = password;
 }
 
-// Add event listener to generate button
+// Add event listener to generate button -- Runs writePassword function when button clicked - which includes the generatePassword function.
 generateBtn.addEventListener("click", writePassword);
