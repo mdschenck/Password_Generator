@@ -78,22 +78,26 @@ function generatePassword() {
       for (i = 0; i < 512; i++) {
         if (lowercase) {
           generatedPassword +=
-            possibleLowercase[Math.floor(Math.random() * passwordLength)];
+            possibleLowercase[
+              Math.floor(Math.random() * possibleLowercase.length)
+            ];
         }
 
         if (uppercase) {
           generatedPassword +=
-            possibleUppercase[Math.floor(Math.random() * passwordLength)];
+            possibleUppercase[
+              Math.floor(Math.random() * possibleUppercase.length)
+            ];
         }
 
         if (numbers) {
           generatedPassword +=
-            possibleNumeric[Math.floor(Math.random() * passwordLength)];
+            possibleNumeric[Math.floor(Math.random() * possibleNumeric.length)];
         }
 
         if (special) {
           generatedPassword +=
-            possibleSpecials[Math.floor(Math.random() * passwordLength)];
+            possibleSpecials[Math.floor(Math.random() * passwordLength.length)];
         }
         console.log(generatedPassword);
       }

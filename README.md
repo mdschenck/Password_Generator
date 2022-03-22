@@ -33,7 +33,7 @@ https://mdschenck.github.io/Password_Generator/
 
 ## Application Use:
 
-When the user navigates to the deployed page, they are presented with a blank password generator application. When clicked, the user is presented with a series of pop-ups to determine the password criteria of password length and type of characters to be included, with the choice to include lowercase and uppercase alphabetic characters, as well as numeric characters and special characters.
+When the user navigates to the deployed page, they are presented with a blank password generator application. When "Generate Password" is clicked, the user is presented with a series of pop-ups to determine the password criteria of password length and type of characters to be included, with the choice to include lowercase and uppercase alphabetic characters, as well as numeric characters and special characters.
 
 ![Screenshot showing deployed website input](assets/images/screenshot-input.JPG)
 
